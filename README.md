@@ -44,6 +44,19 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = Net().to(device)
 visualize(model, (1, 28, 28))
 ```
+![image](https://github.com/GYQ-AI/torchdiagram/blob/main/examples/MNIST%20Network.png)
+
+### Resnet18
+```
+import torch
+from torchvision import models
+from torchdiagram import visualize
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model = models.resnet18().to(device)
+visualize(model, (3, 224, 224))
+```
+![image]()
 
 ## References
 
