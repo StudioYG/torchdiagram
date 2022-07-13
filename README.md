@@ -12,6 +12,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = your_model.to(device)
 visualize(model, input_size=(channels, H, W))
 ```
+Note that the legend of pie chart depicts Sector index. Module name: Proportion (Quantity)
 
 ## Examples
 ### MNIST Network
@@ -56,8 +57,21 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = models.resnet18().to(device)
 visualize(model, (3, 224, 224))
 ```
+![image](https://github.com/GYQ-AI/torchdiagram/blob/main/examples/Resnet18.png)
+
+### Mobilenetv3-small
+```
+import torch
+from torchvision import models
+from torchdiagram import visualize
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model = models.mobilenet_v3_small().to(device)
+visualize(model, (3, 224, 224))
+```
 ![image]()
 
 ## References
 
 ## License
+```torchdiagram``` is MIT-licensed.
