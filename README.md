@@ -45,6 +45,10 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = Net().to(device)
 visualize(model, (1, 28, 28))
 ```
+```
+layer_class:  ['Conv2d', 'Dropout2d', 'Linear']
+layer_count:  [2, 1, 2]
+```
 ![image](https://github.com/GYQ-AI/torchdiagram/blob/main/examples/MNIST%20Network.png)
 
 ### Resnet18
@@ -56,6 +60,10 @@ from torchdiagram import visualize
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = models.resnet18().to(device)
 visualize(model, (3, 224, 224))
+```
+```
+layer_class:  ['Conv2d', 'BatchNorm2d', 'ReLU', 'MaxPool2d', 'BasicBlock', 'AdaptiveAvgPool2d', 'Linear']
+layer_count:  [20, 20, 17, 1, 8, 1, 1]
 ```
 ![image](https://github.com/GYQ-AI/torchdiagram/blob/main/examples/Resnet18.png)
 
@@ -69,9 +77,15 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = models.mobilenet_v3_small().to(device)
 visualize(model, (3, 224, 224))
 ```
-![image]()
+```
+layer_class:  ['Conv2d', 'BatchNorm2d', 'Hardswish', 'ReLU', 'SqueezeExcitation', 'Identity', 'InvertedResidual', 'AdaptiveAvgPool2d', 'Linear', 'Dropout']
+layer_count:  [52, 34, 19, 14, 9, 11, 11, 1, 2, 1]
+```
+![image](https://github.com/GYQ-AI/torchdiagram/blob/main/examples/Mobilenetv3-small.png)
 
 ## References
-
+1. https://github.com/sksq96/pytorch-summary 
+2. https://github.com/graykode/modelsummary 
+3. https://github.com/TylerYep/torchinfo
 ## License
 ```torchdiagram``` is MIT-licensed.
