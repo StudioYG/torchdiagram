@@ -3,7 +3,7 @@ Pytorch has a compact 'torchsummary' tool for model visualization but merely pro
 
 
 ## Usage
-```git clone https://github.com/GYQ-AI/torchdiagram```
+```git clone https://github.com/StudioYG/torchdiagram```
 
 ```
 import torch
